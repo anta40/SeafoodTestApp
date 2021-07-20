@@ -17,9 +17,10 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-        val food_id = intent.getIntExtra("food_id", 0)
+        val food_id = intent.getStringExtra("food_id")!!
 
         vm.getData(food_id)
+
         observe()
     }
 

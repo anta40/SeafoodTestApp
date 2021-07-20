@@ -6,7 +6,7 @@ import com.anta40.app.seafoodtestapp.model.FoodDetails
 import retrofit2.Call
 
 object FoodDetailsRepository {
-    fun getFoodDetailsApiCall(food_id: Int): Call<FoodDetails> {
+    fun getFoodDetailsApiCall(food_id: String): Call<FoodDetails> {
         val call = ApiClient.apiInterface.getFoodDetails(food_id)
         return call
     }

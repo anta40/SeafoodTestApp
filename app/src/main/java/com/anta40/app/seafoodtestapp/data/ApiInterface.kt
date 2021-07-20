@@ -10,5 +10,5 @@ interface ApiInterface {
     fun getFoodList(@Query("c") food_type: String) : Call<FoodList>
 
     @GET("lookup.php")
-    fun getFoodDetails(@Query("i") food_id:Int): Call<FoodDetails>
+    fun getFoodDetails(@Query("i") food_id:String): Call<FoodDetails>
 }

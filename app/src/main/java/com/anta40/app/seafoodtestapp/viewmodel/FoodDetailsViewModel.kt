@@ -17,7 +17,7 @@ class FoodDetailsViewModel: ViewModel() {
     private val _foodDetailsLiveData = MutableLiveData<FoodDetails>()
     val foodDetailsLiveData: LiveData<FoodDetails> = _foodDetailsLiveData
 
-    fun getData(food_id: Int){
+    fun getData(food_id: String){
 
         // viewModelScope.launch {
         FoodDetailsRepository.getFoodDetailsApiCall(food_id).enqueue(object: Callback<FoodDetails> {
