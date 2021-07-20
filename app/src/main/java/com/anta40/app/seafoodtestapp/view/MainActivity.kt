@@ -47,6 +47,7 @@ class MainActivity : AppCompatActivity(), FoodClickListener {
     override fun onRowClicked(data: Food) {
         val intent = Intent(this@MainActivity, DetailActivity::class.java)
         intent.putExtra("food_id", data.id)
+        intent.putExtra("food_name", data.description)
         startActivity(intent)
     }
 }
