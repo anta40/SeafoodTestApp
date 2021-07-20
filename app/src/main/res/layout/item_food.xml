@@ -30,7 +30,6 @@
             android:layout_below="@+id/food_thumbnail"
             android:maxLines="4"
             android:padding="8dp"
-            android:text="ashdjahsjdhaksdhjkahsdkja"
             android:textColor="#222"
             android:textSize="22dp" />
 
