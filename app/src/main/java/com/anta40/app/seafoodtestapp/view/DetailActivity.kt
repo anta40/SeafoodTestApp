@@ -24,7 +24,7 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
     private lateinit var food_detail_img: ImageView
     private lateinit var food_details_instructions: TextView
-    private lateinit var food_detail_ingredients: LinearLayout
+    private lateinit var food_detail_ingredients: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +32,7 @@ class DetailActivity : AppCompatActivity() {
 
         food_detail_img = binding.foodDetailsImg
         food_details_instructions = binding.foodDetailsInstructions
-        food_detail_ingredients = binding.llIngredients
+        food_detail_ingredients = binding.txtIngredients
 
         setContentView(binding.root)
 
@@ -52,13 +52,14 @@ class DetailActivity : AppCompatActivity() {
             else  {
                 val details = it.details.get(0)
 
+                /*
                 val textView1 = TextView(this)
                 textView1.layoutParams = LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.WRAP_CONTENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT
                 )
                 textView1.text = details.ingredient1 +" : " + details.measure1
-                textView1.setPadding(10, 5, 10, 5)
+                textView1.setPadding(0, 1, 0, 1)
 
                 val textView2 = TextView(this)
                 textView2.layoutParams = LinearLayout.LayoutParams(
@@ -66,7 +67,7 @@ class DetailActivity : AppCompatActivity() {
                     LinearLayout.LayoutParams.WRAP_CONTENT
                 )
                 textView2.text = details.ingredient2 +" : " + details.measure2
-                textView2.setPadding(10, 5, 10, 5)
+                textView2.setPadding(0, 1, 0, 1)
 
                 val textView3 = TextView(this)
                 textView3.layoutParams = LinearLayout.LayoutParams(
@@ -74,11 +75,31 @@ class DetailActivity : AppCompatActivity() {
                     LinearLayout.LayoutParams.WRAP_CONTENT
                 )
                 textView3.text = details.ingredient3 +" : " + details.measure3
-                textView3.setPadding(10, 5, 10, 5)
+                textView3.setPadding(0,1, 0, 1)
 
-                food_detail_ingredients.addView(textView1)
-                food_detail_ingredients.addView(textView2)
-                food_detail_ingredients.addView(textView3)
+                val textView4 = TextView(this)
+                textView4.layoutParams = LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+                )
+                textView4.text = details.ingredient4 +" : " + details.measure4
+                textView4.setPadding(0,1, 0, 1)
+
+                val textView5 = TextView(this)
+                textView5.layoutParams = LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+                )
+                textView5.text = details.ingredient5 +" : " + details.measure5
+                textView5.setPadding(0,1, 0, 1)
+                */
+                food_detail_ingredients.append(details.ingredient1 + " : " +details.measure1)
+                food_detail_ingredients.append(", ");
+                food_detail_ingredients.append(details.ingredient2 + " : " +details.measure2)
+                food_detail_ingredients.append(", ");
+                food_detail_ingredients.append(details.ingredient3 + " : " +details.measure3)
+                food_detail_ingredients.append(", ");
+                food_detail_ingredients.append(details.ingredient4 + " : " +details.measure4)
 
                 food_details_instructions.setText(details.instructions)
 

@@ -34,11 +34,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <LinearLayout
-                android:id="@+id/llIngredients"
+            <EditText
+                android:id="@+id/txtIngredients"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:orientation="vertical"
+                android:editable="false"
+                android:backgroundTint="#00000000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 />
