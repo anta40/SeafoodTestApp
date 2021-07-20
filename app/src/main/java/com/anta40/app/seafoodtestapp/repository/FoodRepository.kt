@@ -6,11 +6,8 @@ import retrofit2.Call
 
 object FoodRepository {
 
-    suspend fun getFoodListApiCall(): Call<FoodList> {
-
+    fun getFoodListApiCall(): Call<FoodList> {
         val call = ApiClient.apiInterface.getFoodList("Seafood")
-
         return call
     }
-
 }

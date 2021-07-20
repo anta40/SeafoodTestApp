@@ -19,7 +19,7 @@ class FoodListViewModel: ViewModel() {
 
     fun getData(){
 
-        viewModelScope.launch {
+       // viewModelScope.launch {
             FoodRepository.getFoodListApiCall().enqueue(object: Callback<FoodList> {
                 override fun onResponse(
                     call: Call<FoodList>,
@@ -33,7 +33,7 @@ class FoodListViewModel: ViewModel() {
                     Log.e("FoodListViewModel", "onFailure: ", t)
                 }
             })
-        }
+      //  }
 
 
     }

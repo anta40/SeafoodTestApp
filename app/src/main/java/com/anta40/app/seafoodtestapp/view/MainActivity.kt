@@ -1,5 +1,6 @@
 package com.anta40.app.seafoodtestapp.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -44,6 +45,8 @@ class MainActivity : AppCompatActivity(), FoodClickListener {
     }
 
     override fun onRowClicked(data: Food) {
-
+        val intent = Intent(this@MainActivity, DetailActivity::class.java)
+        intent.putExtra("food_id", data.id)
+        startActivity(intent)
     }
 }
