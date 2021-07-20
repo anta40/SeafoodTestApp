@@ -1,5 +1,8 @@
 package com.anta40.app.seafoodtestapp.view
 
+import android.content.Intent
+import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
@@ -52,47 +55,6 @@ class DetailActivity : AppCompatActivity() {
             else  {
                 val details = it.details.get(0)
 
-                /*
-                val textView1 = TextView(this)
-                textView1.layoutParams = LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.WRAP_CONTENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT
-                )
-                textView1.text = details.ingredient1 +" : " + details.measure1
-                textView1.setPadding(0, 1, 0, 1)
-
-                val textView2 = TextView(this)
-                textView2.layoutParams = LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.WRAP_CONTENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT
-                )
-                textView2.text = details.ingredient2 +" : " + details.measure2
-                textView2.setPadding(0, 1, 0, 1)
-
-                val textView3 = TextView(this)
-                textView3.layoutParams = LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.WRAP_CONTENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT
-                )
-                textView3.text = details.ingredient3 +" : " + details.measure3
-                textView3.setPadding(0,1, 0, 1)
-
-                val textView4 = TextView(this)
-                textView4.layoutParams = LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.WRAP_CONTENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT
-                )
-                textView4.text = details.ingredient4 +" : " + details.measure4
-                textView4.setPadding(0,1, 0, 1)
-
-                val textView5 = TextView(this)
-                textView5.layoutParams = LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.WRAP_CONTENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT
-                )
-                textView5.text = details.ingredient5 +" : " + details.measure5
-                textView5.setPadding(0,1, 0, 1)
-                */
                 food_detail_ingredients.append(details.ingredient1 + " : " +details.measure1)
                 food_detail_ingredients.append(", ");
                 food_detail_ingredients.append(details.ingredient2 + " : " +details.measure2)
@@ -100,6 +62,18 @@ class DetailActivity : AppCompatActivity() {
                 food_detail_ingredients.append(details.ingredient3 + " : " +details.measure3)
                 food_detail_ingredients.append(", ");
                 food_detail_ingredients.append(details.ingredient4 + " : " +details.measure4)
+                food_detail_ingredients.append(", ");
+                food_detail_ingredients.append(details.ingredient5 + " : " +details.measure5)
+                food_detail_ingredients.append(", ");
+                food_detail_ingredients.append(details.ingredient6 + " : " +details.measure6)
+                food_detail_ingredients.append(", ");
+                food_detail_ingredients.append(details.ingredient7 + " : " +details.measure7)
+                food_detail_ingredients.append(", ");
+                food_detail_ingredients.append(details.ingredient8+ " : " +details.measure8)
+                food_detail_ingredients.append(", ");
+                food_detail_ingredients.append(details.ingredient9+ " : " +details.measure9)
+                food_detail_ingredients.append(", ");
+                food_detail_ingredients.append(details.ingredient10+ " : " +details.measure10)
 
                 food_details_instructions.setText(details.instructions)
 
@@ -108,6 +82,12 @@ class DetailActivity : AppCompatActivity() {
                     .override(600, 600)
                     .centerCrop()
                     .into(food_detail_img);
+
+                food_detail_img.setOnClickListener {
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(details.youtubeUrl));
+                    intent.flags = FLAG_ACTIVITY_NEW_TASK
+                    applicationContext.startActivity(intent)
+                }
             }
         }
     }
